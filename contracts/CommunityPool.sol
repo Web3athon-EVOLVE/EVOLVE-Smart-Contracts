@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
-
-pragma solidity 0.8.0;
+pragma solidity 0.8.12;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -8,7 +7,7 @@ import '@aave/contracts/interfaces/ILendingPoolAddressesProvider.sol';
 import '@aave/contracts/interfaces/ILendingPool.sol';
 
 contract CommunityPool is Ownable {
-
+    
     address public admin;
     address[] public contributors;
     address[] public poolTokens;

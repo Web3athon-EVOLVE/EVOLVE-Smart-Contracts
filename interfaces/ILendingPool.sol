@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: agpl-3.0
-pragma solidity 0.6.12;
+pragma solidity 0.8.12;
 pragma experimental ABIEncoderV2;
 
+// DONT FORGET TO CHANGE THE ./ AS THIS IS LOCAL !!!!!!!!!!!!!!!!!! './ILendingPoolAddressesProvider.sol' becomes:
 import {ILendingPoolAddressesProvider} from '@aave/contracts/interfaces/ILendingPoolAddressesProvider.sol';
 import {DataTypes} from '@aave/contracts/protocol/libraries/types/DataTypes.sol';
 
