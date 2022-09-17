@@ -12,6 +12,7 @@
     "compile": "hardhat compile",
     "deploy-mumbai": "hardhat run --network mumbai scripts/deploy.ts",
     "script": "hardhat run --network mumbai scripts/testPool.ts",
+    "script-multi": "hardhat run --network mumbai scripts/testPoolMultiple.ts",
     "verify": "hardhat verify",
     "accounts": "hardhat accounts",
     "hello": "hardhat hello"

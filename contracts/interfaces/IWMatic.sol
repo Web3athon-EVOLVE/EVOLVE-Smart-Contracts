@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-interface IWeth {
+interface IWMatic {
   function allowance(address owner, address spender) external view returns (uint256 remaining);
   function approve(address spender, uint256 value) external returns (bool success);
   function balanceOf(address owner) external view returns (uint256 balance);

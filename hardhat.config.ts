@@ -26,7 +26,8 @@ task("hello", "Prints 'Hello, World!'", async () => {
 const { MUMBAI_ALCHEMY_KEY, 
         MUMBAI_ALCHEMY_API_URL, 
         PRIVATE_KEY, 
-        POLYGONSCAN_API_KEY 
+        POLYGONSCAN_API_KEY,
+        ADMIN_WALLET_SEED
       } = process.env;
 
 const config: HardhatUserConfig = {
@@ -56,7 +57,10 @@ const config: HardhatUserConfig = {
     },
     mumbai: {
       url: MUMBAI_ALCHEMY_API_URL,
-      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      accounts: {
+        mnemonic: ADMIN_WALLET_SEED,
+      },
+      // accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
       gas: 2100000,
       gasPrice: 8000000000
     }
