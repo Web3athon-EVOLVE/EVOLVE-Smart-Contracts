@@ -1,5 +1,5 @@
 {
-  "name": "Evolve-Smart-Contracts",
+  "name": "evolve_contracts",
   "version": "1.0.0",
   "description": "Smart Contracts for EVOLVE",
   "main": "index.ts",
