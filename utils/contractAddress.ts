@@ -1,0 +1,1 @@
+export const mumbaiContractAddress = "0xe7B9f22B8Ee284abF25fACe18E756E48B57CB70e"

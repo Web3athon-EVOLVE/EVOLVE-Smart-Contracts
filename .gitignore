@@ -5,3 +5,15 @@ __pycache__
 build/
 reports/
 test/
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+#Hardhat files
+cache
+artifacts
+

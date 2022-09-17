@@ -1,27 +1,13 @@
-# General
+# Sample Hardhat Project
 
-# Instructions
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
+Try running some of the following tasks:
 
-# Brownie Commands 
-
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.ts
 ```
-brownie compile
-```
-
-# .env
-
-```
-export PRIVATE_KEY=""
-export WEB3_INFURA_PROJECT_ID=""
-export ETHERSCAN_TOKEN=""
-```
-
-ETHERSCAN_TOKEN is only needed if you want your contract to be verified upon deployment. 
-
-# Deployment
-
-# Contract - CommunityPool.sol
-
-# Scripts 
-

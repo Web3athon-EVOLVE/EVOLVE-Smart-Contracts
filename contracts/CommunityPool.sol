@@ -1,22 +1,29 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.12;
 
+// aave interfaces
+import "./interfaces/ILendingPoolAddressesProvider.sol";
+import "./interfaces/ILendingPool.sol";
+
+// openzeppelin contracts
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import '@aave/contracts/interfaces/ILendingPoolAddressesProvider.sol';
-import '@aave/contracts/interfaces/ILendingPool.sol';
+
+// logging
+import "hardhat/console.sol";
 
 contract CommunityPool is Ownable {
     
-    address public admin;
-    address[] public contributors;
+    address public admin; 
+    address[] public contributors; 
     address[] public poolTokens;
-    mapping(address => bool) public tokenIsAccepted;
+    mapping(address => bool) public tokenIsAccepted; 
     mapping(address => mapping(address => uint256)) public contributions;
     address public poolAddress;
     ILendingPool public lendingPool;
     ILendingPoolAddressesProvider public poolProvider;
 
+    // deployer is the admin 
     constructor() public {
         admin = msg.sender;
     }
@@ -50,7 +57,9 @@ contract CommunityPool is Ownable {
     function poolDeposit(address _token, uint256 _amount) public {
         require(_amount > 0, "You need to spend something.");
         // make sure that the token is activated by the admin
+        console.log("REQUIRE PASSED");
         if (tokenIsAccepted[_token]) {
+            console.log("in here");
             IERC20(_token).transferFrom(msg.sender, address(this), _amount);
             contributors.push(msg.sender);
             contributions[_token][msg.sender] += _amount;
