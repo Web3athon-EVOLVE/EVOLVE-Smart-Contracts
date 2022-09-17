@@ -1,10 +1,8 @@
-# dApp Starter Boilerplate
+# Evolution Pool Front-End
 
-A dApp starter kit template to quick start a dapp project with Next.js + Tailwind CSS + Ethers + wagmi + RainbowKit.
+Front-End DApp to interact with our smart contracts using Next.js + Tailwind CSS + Ethers + wagmi + RainbowKit.
 
-Other tools/components included: Headless UI, Heroicons, Autoprefixer, Sass, PostCSS, ESLint, Prettier.
-
-Live preview for this repo: https://dapp-starter.aris.ac
+Other tools used: Headless UI, Heroicons, Autoprefixer, Sass, PostCSS, ESLint, Prettier.
 
 ## Getting Started
 
