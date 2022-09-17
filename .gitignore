@@ -5,6 +5,8 @@ __pycache__
 build/
 reports/
 test/
+node_modules/
+.next/
 
 node_modules
 .env

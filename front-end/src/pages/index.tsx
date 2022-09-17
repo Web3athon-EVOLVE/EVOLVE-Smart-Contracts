@@ -21,16 +21,18 @@ export default function Home() {
 function Header() {
   return (
     <header className={styles.header}>
-      <div>
-        <ThemeToggleList />
-      </div>
+      {/* Left Header */}
       <div className="flex items-center">
-        <ThemeToggleButton /> header <ThemeToggleList />
+        <ThemeToggleButton></ThemeToggleButton>
       </div>
-
+      {/* Middle Header */}
+      <div className={styles.main + ' space-y-1'}>
+        <h1 className="text-4xl font-1 font-bold font-size-headline color-1 mt-2">EVOLUTION POOL</h1>
+        <h5 className="text-2xl font-1 font-size-headline color-1 mt-2">Learn, Earn, & Profit</h5>
+      </div>
+      {/* Right Header */}
       <div className="flex items-center">
-        <ThemeToggleButton />
-        <ThemeToggleList />
+        <ThemeToggleButton></ThemeToggleButton>
       </div>
     </header>
   )
@@ -43,69 +45,26 @@ function Main() {
   const { data: balance, isLoading: isBalanceLoading } = useBalance({
     addressOrName: address,
   })
-  const { openConnectModal } = useConnectModal()
-  const { openAccountModal } = useAccountModal()
-  const { openChainModal } = useChainModal()
   return (
-    <main className={styles.main + ' space-y-6'}>
+    <main className={styles.main + ' space-y-2'}>
+      {/* Opening Paragraph */}
       <div className="text-center">
-        <p className="font-medium">Dapp Starter Boilerplate by arisac.eth</p>
-        <p>
-          <a
-            href="https://github.com/arisac/dapp-starter"
-            target="_blank"
-            className="text-sm underline"
-            rel="noreferrer"
-          >
-            https://github.com/arisac/dapp-starter
-          </a>
+        <p className="font-medium mx-20">
+          Deep dive into the benefits of DeFi by contributing your earned $EVOLVE Tokens in the community's "Evolution Pool" for increased rewards and earned interest!
         </p>
       </div>
-
-      <div>
-        <h4 className="text-center text-sm font-medium">demo: ConnectWalletBtn Full</h4>
-        <div className="flex w-full flex-col items-center">
-          <ConnectWallet />
-        </div>
-      </div>
-
-      <div>
-        <h4 className="text-center text-sm font-medium">demo: useModal (rainbowkit ^0.4.3)</h4>
-        <div className="flex w-full flex-col items-center">
-          {openConnectModal && (
-            <button
-              onClick={openConnectModal}
-              type="button"
-              className="m-1 rounded-lg bg-orange-500 py-1 px-3 text-white transition-all duration-150 hover:scale-105"
-            >
-              useConnectModal
-            </button>
-          )}
-
-          {openAccountModal && (
-            <button
-              onClick={openAccountModal}
-              type="button"
-              className="m-1 rounded-lg bg-orange-500 py-1 px-3 text-white transition-all duration-150 hover:scale-105"
-            >
-              useAccountModal
-            </button>
-          )}
-
-          {openChainModal && (
-            <button
-              onClick={openChainModal}
-              type="button"
-              className="m-1 rounded-lg bg-orange-500 py-1 px-3 text-white transition-all duration-150 hover:scale-105"
-            >
-              useChainModal
-            </button>
-          )}
-        </div>
-      </div>
-
+      {/* Main Body */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+        <p>Wallet Account Information</p>
         <dl className={styles.dl}>
+          {/* Connect To Wallet */}
+          <div>
+            <dt>Connect Wallet</dt>
+            <div className="my-1 flex w-full flex-col items-center">
+              <ConnectWallet/>
+            </div>
+          </div>
+          {/* More Account Info */}
           <dt>Connector</dt>
           <dd>
             {connector?.name}
@@ -121,83 +80,33 @@ function Main() {
           </dd>
           <dt>Connected Network</dt>
           <dd>{chain ? `${chain?.id}: ${chain?.name}` : 'n/a'}</dd>
-          <dt>Switch Network</dt>
-          <dd className="flex flex-wrap justify-center">
-            {isConnected &&
-              chains.map(x => (
-                <button
-                  disabled={!switchNetwork || x.id === chain?.id}
-                  key={x.id}
-                  onClick={() => switchNetwork?.(x.id)}
-                  className={
-                    (x.id === chain?.id ? 'bg-green-500' : 'bg-blue-500 hover:scale-105') +
-                    ' m-1 rounded-lg py-1 px-3 text-white transition-all duration-150'
-                  }
-                >
-                  {x.name}
-                  {isNetworkLoading && pendingChainId === x.id && ' (switching)'}
-                </button>
-              ))}
-            <ConnectWallet show="disconnected" />
-          </dd>
           <dt>Account</dt>
           <dd className="break-all">{address ? `${address}` : 'n/a'}</dd>
           <dt>Balance</dt>
           <dd className="break-all">
             {isBalanceLoading ? 'loading' : balance ? `${balance?.formatted} ${balance?.symbol}` : 'n/a'}
           </dd>
-          <dt>Sign Message</dt>
-          <dd className="break-all">{address ? <SignMsg /> : 'n/a'} </dd>
         </dl>
       </div>
+      {/* Staking App */}
+      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+        
+      </div>
     </main>
-  )
-}
-
-function SignMsg() {
-  const [msg, setMsg] = useState('Dapp Starter')
-  const { data, isError, isLoading, isSuccess, signMessage } = useSignMessage({
-    message: msg,
-  })
-  const signMsg = () => {
-    if (msg) {
-      signMessage()
-    }
-  }
-
-  return (
-    <>
-      <p>
-        <input value={msg} onChange={e => setMsg(e.target.value)} className="rounded-lg p-1" />
-        <button
-          disabled={isLoading}
-          onClick={() => signMsg()}
-          className="ml-1 rounded-lg bg-blue-500 py-1 px-2 text-white transition-all duration-150 hover:scale-105"
-        >
-          Sign
-        </button>
-      </p>
-      <p>
-        {isSuccess && <span>Signature: {data}</span>}
-        {isError && <span>Error signing message</span>}
-      </p>
-    </>
   )
 }
 
 function Footer() {
   return (
     <footer className={styles.footer}>
+      {/* Left Footer */}
       <div>
-        <ThemeToggleList />
       </div>
+      {/* Middle Footer */}
       <div className="flex items-center">
-        <ThemeToggleButton /> footer <ThemeToggleList />
       </div>
-
+      {/* Right Footer */}
       <div className="flex items-center">
-        <ThemeToggleButton />
-        <ThemeToggleList />
       </div>
     </footer>
   )
