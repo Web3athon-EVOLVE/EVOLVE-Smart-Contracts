@@ -9,8 +9,10 @@ yarn install
 ```shell
 # deploy main smart contract
 yarn deploy-mumbai
-# run test script
+# run test script with pool admin depositing wMatic
 yarn script
+# run test scrript with multiple participants depositing wMatic
+yarn script-multi
 ```
 
 ## Scripts Folder
