@@ -6,8 +6,9 @@ import HeadGlobal from 'components/HeadGlobal'
 // Web3Wrapper deps:
 import { getDefaultWallets, RainbowKitProvider, lightTheme, darkTheme } from '@rainbow-me/rainbowkit'
 import { Chain } from '@rainbow-me/rainbowkit'
-import { chain, createClient, configureChains, WagmiConfig } from 'wagmi'
+import { chain, createClient, configureChains, WagmiConfig, alchemyRpcUrls } from 'wagmi'
 import { infuraProvider } from 'wagmi/providers/infura'
+import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { useTheme } from 'next-themes'
@@ -50,8 +51,9 @@ const gnosisChain: Chain = {
 
 // Web3 Configs
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, gnosisChain],
+  [chain.polygonMumbai],
   [
+    alchemyProvider({ apiKey: process.env.MUMBAI_ALCHEMY_KEY, stallTimeout: 1_000}),
     infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURA_ID !== '' && process.env.NEXT_PUBLIC_INFURA_ID }),
     jsonRpcProvider({
       rpc: chain => {
@@ -59,9 +61,10 @@ const { chains, provider } = configureChains(
         return { http: chain.rpcUrls.default }
       },
     }),
-    publicProvider(),
+    publicProvider({stallTimeout: 1_000}),
   ]
 )
+
 const { connectors } = getDefaultWallets({ appName: app.name, chains })
 const wagmiClient = createClient({ autoConnect: true, connectors, provider })
 
@@ -77,7 +80,7 @@ export function Web3Wrapper({ children }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         chains={chains}
-        initialChain={1} // Optional, initialChain={1}, initialChain={chain.mainnet}, initialChain={gnosisChain}
+        initialChain={chain.polygonMumbai} // Optional, initialChain={1}, initialChain={chain.mainnet}, initialChain={gnosisChain}
         showRecentTransactions={true}
         theme={resolvedTheme === 'dark' ? darkTheme() : lightTheme()}
       >
@@ -86,3 +89,4 @@ export function Web3Wrapper({ children }) {
     </WagmiConfig>
   )
 }
+
