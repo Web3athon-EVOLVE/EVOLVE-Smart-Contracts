@@ -1,6 +1,6 @@
 export const app: { [key: string]: string } = {
-  name: 'dApp Starter', // web app name
-  title: 'dApp Starter Boilerplate', // website title
+  name: 'Evolution Pool', // web app name
+  title: 'Evolution Pool', // website title
   description: 'dApp Starter Boilerplate by https://github.com/arisac', // description of website
   keywords: 'web3, dapp, ethereum, ethers, wagmi, rainbowkit, nextjs, react, tailwindcss, sass, boilerplate', // keywords for SEO
   url: 'https://dapp-starter.aris.ac', // website url

@@ -1,12 +1,10 @@
 import styles from 'styles/Home.module.scss'
 import ThemeToggleButton from 'components/Theme/ThemeToggleButton'
-import ThemeToggleList from 'components/Theme/ThemeToggleList'
 import { useState } from 'react'
 import { useNetwork, useSwitchNetwork, useAccount, useBalance } from 'wagmi'
 import ConnectWallet from 'components/Connect/ConnectWallet'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useConnectModal, useAccountModal, useChainModal } from '@rainbow-me/rainbowkit'
-import { useSignMessage } from 'wagmi'
+import StakeForm from 'components/StakeForm'
 
 export default function Home() {
   return (
@@ -90,7 +88,7 @@ function Main() {
       </div>
       {/* Staking App */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
-        
+        <StakeForm/>
       </div>
     </main>
   )
