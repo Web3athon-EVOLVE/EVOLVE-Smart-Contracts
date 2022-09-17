@@ -12,6 +12,11 @@ npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
 
+### Scripts Folder
+#### ./testPool.ts
+Script for testing our main contract "CommunityPool" or known as "Evolution Pool" to our users. 
+#### ./deploy.ts
+Script for deploting our main contract "CommunityPool" or known as "Evolution Pool" to our users. 
 ### Utils Folder
 #### ./helpers.ts 
 Contains functions helpful for writing scripts such getting the signer and the balance of an address
