@@ -83,6 +83,7 @@ export function Web3Wrapper({ children }) {
         initialChain={chain.polygonMumbai} // Optional, initialChain={1}, initialChain={chain.mainnet}, initialChain={gnosisChain}
         showRecentTransactions={true}
         theme={resolvedTheme === 'dark' ? darkTheme() : lightTheme()}
+        coolMode
       >
         {children}
       </RainbowKitProvider>

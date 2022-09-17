@@ -43,6 +43,18 @@ function Main() {
   const { data: balance, isLoading: isBalanceLoading } = useBalance({
     addressOrName: address,
   })
+  const { data: balanceWMATIC, isLoading: isBalanceWMATICLoading } = useBalance({
+    addressOrName: address,
+    token: '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889'
+  })
+  const { data: balanceAmwMATIC, isLoading: isBalanceAmWMATICLoading } = useBalance({
+    addressOrName: address,
+    token: '0xF45444171435d0aCB08a8af493837eF18e86EE27'
+  })
+  const { data: balanceOfSmartContract, isLoading: isBalanceOfSmartContractLoading } = useBalance({
+    addressOrName: '0xe7B9f22B8Ee284abF25fACe18E756E48B57CB70e',
+    token: '0xF45444171435d0aCB08a8af493837eF18e86EE27'
+  })
   return (
     <main className={styles.main + ' space-y-2'}>
       {/* Opening Paragraph */}
@@ -80,11 +92,29 @@ function Main() {
           <dd>{chain ? `${chain?.id}: ${chain?.name}` : 'n/a'}</dd>
           <dt>Account</dt>
           <dd className="break-all">{address ? `${address}` : 'n/a'}</dd>
-          <dt>Balance</dt>
+          <dt>Balance (MATIC)</dt>
           <dd className="break-all">
             {isBalanceLoading ? 'loading' : balance ? `${balance?.formatted} ${balance?.symbol}` : 'n/a'}
           </dd>
+          <dt>Balance (Wrapped Matic)</dt>
+          <dd className="break-all">
+            {isBalanceWMATICLoading ? 'loading' : balanceWMATIC ? `${balanceWMATIC?.formatted} ${balanceWMATIC?.symbol}` : 'n/a'}
+          </dd>
+          <dt>Balance (Aave Matic Market WMATIC)</dt>
+          <dd className="break-all">
+            {isBalanceAmWMATICLoading ? 'loading' : balanceAmwMATIC ? `${balanceAmwMATIC?.formatted} ${balanceAmwMATIC?.symbol}` : 'n/a'}
+          </dd>
         </dl>
+      </div>
+      {/* Evolution Pool Info */}
+      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+        <p>Evolution Pool Earnings</p>
+          <dl className={styles.dl}>
+            <dt>Balance (Aave Matic Market WMATIC)</dt>
+              <dd className="break-all">
+                {isBalanceOfSmartContractLoading ? 'loading' : balanceOfSmartContract ? `${balanceOfSmartContract?.formatted} ${balanceOfSmartContract?.symbol}` : 'n/a'}
+              </dd>
+          </dl>
       </div>
       {/* Staking App */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">

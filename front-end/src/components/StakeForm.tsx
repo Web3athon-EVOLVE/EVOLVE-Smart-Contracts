@@ -9,7 +9,7 @@ export default function StakeForm() {
   if (!mounted) return null
     return (
         <div>
-        <p>Stake Your $EVOLVE Tokens</p>
+        <p>Contribute To The Pool By Staking Your $EVOLVE Tokens</p>
         <Form className="p-4">
             {/* Input Stake Amount */}
             <Form.Group className = 'pt-2 text-sm uppercase text-gray-500' controlId="stakeAmount">
