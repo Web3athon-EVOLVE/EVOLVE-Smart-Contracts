@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useNetwork, useSwitchNetwork, useAccount, useBalance } from 'wagmi'
 import ConnectWallet from 'components/Connect/ConnectWallet'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import StakeForm from 'components/StakeForm'
+import StakeForm from 'components/LendingPoolDeposit/StakeForm'
 
 export default function Home() {
   return (
@@ -63,49 +63,6 @@ function Main() {
           Deep dive into the benefits of DeFi by contributing your earned $EVOLVE Tokens in the community's "Evolution Pool" for increased rewards and earned interest!
         </p>
       </div>
-      {/* Main Body */}
-      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
-        <p>Wallet Account Information</p>
-        <dl className={styles.dl}>
-          {/* Connect To Wallet */}
-          <div>
-            <dt>Connect Wallet</dt>
-            <div className="my-1 flex w-full flex-col items-center">
-              <ConnectWallet/>
-            </div>
-          </div>
-          {/* More Account Info */}
-          <dt>Connector</dt>
-          <dd>
-            {connector?.name}
-            {!address && (
-              <ConnectButton.Custom>
-                {({ openConnectModal }) => (
-                  <span onClick={openConnectModal} className="cursor-pointer hover:underline">
-                    Not connected, connect wallet
-                  </span>
-                )}
-              </ConnectButton.Custom>
-            )}
-          </dd>
-          <dt>Connected Network</dt>
-          <dd>{chain ? `${chain?.id}: ${chain?.name}` : 'n/a'}</dd>
-          <dt>Account</dt>
-          <dd className="break-all">{address ? `${address}` : 'n/a'}</dd>
-          <dt>Balance (MATIC)</dt>
-          <dd className="break-all">
-            {isBalanceLoading ? 'loading' : balance ? `${balance?.formatted} ${balance?.symbol}` : 'n/a'}
-          </dd>
-          <dt>Balance (Wrapped Matic)</dt>
-          <dd className="break-all">
-            {isBalanceWMATICLoading ? 'loading' : balanceWMATIC ? `${balanceWMATIC?.formatted} ${balanceWMATIC?.symbol}` : 'n/a'}
-          </dd>
-          <dt>Balance (Aave Matic Market WMATIC)</dt>
-          <dd className="break-all">
-            {isBalanceAmWMATICLoading ? 'loading' : balanceAmwMATIC ? `${balanceAmwMATIC?.formatted} ${balanceAmwMATIC?.symbol}` : 'n/a'}
-          </dd>
-        </dl>
-      </div>
       {/* Evolution Pool Info */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
         <p>Evolution Pool Earnings</p>
@@ -121,6 +78,47 @@ function Main() {
       {/* Staking App */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
         <StakeForm balance={balanceWMATIC?.formatted}/>
+      </div>
+      {/* WALLET INFO COMPONENT */}
+      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+        <p>Wallet Account Information</p>
+        <dl className={styles.dl}>
+          <div>
+            <dt>Connect Wallet</dt>
+            <div className="my-1 flex w-full flex-col items-center">
+              <ConnectWallet/>
+            </div>
+          </div>
+          <dt>Connector</dt>
+            <dd>
+              {connector?.name}
+              {!address && (
+                <ConnectButton.Custom>
+                  {({ openConnectModal }) => (
+                    <span onClick={openConnectModal} className="cursor-pointer hover:underline">
+                      Not connected, connect wallet
+                    </span>
+                  )}
+                </ConnectButton.Custom>
+              )}
+            </dd>
+          <dt>Connected Network</dt>
+            <dd>{chain ? `${chain?.id}: ${chain?.name}` : 'n/a'}</dd>
+          <dt>Account</dt>
+            <dd className="break-all">{address ? `${address}` : 'n/a'}</dd>
+          <dt>Balance (MATIC)</dt>
+            <dd className="break-all">
+              {isBalanceLoading ? 'loading' : balance ? `${balance?.formatted} ${balance?.symbol}` : 'n/a'}
+            </dd>
+          <dt>Balance (Wrapped Matic)</dt>
+            <dd className="break-all">
+              {isBalanceWMATICLoading ? 'loading' : balanceWMATIC ? `${balanceWMATIC?.formatted} ${balanceWMATIC?.symbol}` : 'n/a'}
+            </dd>
+          <dt>Balance (Aave Matic Market WMATIC)</dt>
+            <dd className="break-all">
+              {isBalanceAmWMATICLoading ? 'loading' : balanceAmwMATIC ? `${balanceAmwMATIC?.formatted} ${balanceAmwMATIC?.symbol}` : 'n/a'}            
+            </dd>
+        </dl>
       </div>
     </main>
   )

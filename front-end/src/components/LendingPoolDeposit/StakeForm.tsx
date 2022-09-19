@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Form, ButtonGroup, Button, InputGroup } from 'react-bootstrap';
 
 export default function StakeForm(wMatic) {
-    const [mounted, setMounted] = useState(false)
+    const [mounted, setMounted] = useState(false);
     const [amount, setQuantity] = useState('');
     const [validAmount, setValidAmount] = useState(false);
     const [formType, setForm] = useState('stake');
-    const [sufficientAllowance, setAllowance] = useState(false);
+    const title = (formType === 'stake') ? "Stake" : (formType === 'unstake') ? "Unstake" : undefined;
 
-    useEffect(() => setMounted(true), [])
+    useEffect(() => setMounted(true), []);
 
     function setAmount (perc) {
         const amount = Math.floor(Number(wMatic.balance) * perc) / 100;
@@ -24,17 +24,6 @@ export default function StakeForm(wMatic) {
         console.log(amount, isValid);
         setValidAmount(isValid);
         setQuantity(e.target.value);
-
-        if (isValid) {
-            // checkAllowance(value).then(allowanceOk => {
-            //     setAllowance(allowanceOk);
-            // })
-        }
-    }
-
-    function checkAllowance (amount) {
-        console.log("TODO: Check Allowance");
-        return false;
     }
 
     function submitForm () {
@@ -45,33 +34,34 @@ export default function StakeForm(wMatic) {
         }
     }
 
-    // stake!! 
     function submitStake() {
         if (!validAmount) {
             console.log("Invalid token amount");
             return
         }
+        setForm('unstake');
         console.log("TODO: STAKE");
+        console.log("AMOUNT: ", amount);
     }
-    // unstake!!
+
     function submitUnstake() {
         if (!validAmount) {
             console.log("Invalid token amount");
             return
         }
-        const value = Number(amount);
-
+        setForm('stake');
         console.log("TODO: UNSTAKE");
+        console.log("AMOUNT: ", amount);
     }
 
-  if (!mounted) return null
+    if (!mounted) return null
     return (
         <div>
         <p>Contribute To The Pool By Staking Your $EVOLVE Tokens</p>
         <Form className="p-4">
             {/* Input Stake Amount */}
-            <Form.Group className = 'pt-2 text-sm uppercase text-gray-500' controlId="stakeAmount">
-                <Form.Label variant="secondary" className="w-100 text-end text-muted" >Balance: </Form.Label>
+            <Form.Group className = 'pt-2 text-sm uppercase' controlId="stakeAmount">
+                <Form.Label variant="secondary" className="w-100 text-end" >Balance: </Form.Label>
                 <InputGroup className="mb-3">
                     <Form.Control
                         type="text" 
@@ -93,11 +83,9 @@ export default function StakeForm(wMatic) {
             </ButtonGroup>
             {/* Submit Transaction */}
             <Button
-                disabled={!(validAmount && (formType === 'unstake' || sufficientAllowance))} 
                 onClick={()=>submitForm()} 
-                className="w-20 m-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">Deposit
+                className="w-20 m-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">{title}
             </Button>
         </Form>
-    </div>
-    )
+    </div>);
 }
