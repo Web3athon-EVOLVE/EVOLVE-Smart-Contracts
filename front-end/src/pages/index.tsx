@@ -5,6 +5,7 @@ import { useNetwork, useSwitchNetwork, useAccount, useBalance } from 'wagmi'
 import ConnectWallet from 'components/Connect/ConnectWallet'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import StakeForm from 'components/LendingPoolDeposit/StakeForm'
+import GetWMatic from 'components/LendingPoolDeposit/GetWMatic'
 
 export default function Home() {
   return (
@@ -119,6 +120,10 @@ function Main() {
               {isBalanceAmWMATICLoading ? 'loading' : balanceAmwMATIC ? `${balanceAmwMATIC?.formatted} ${balanceAmwMATIC?.symbol}` : 'n/a'}            
             </dd>
         </dl>
+      </div>
+      {/* Get Wrapped Matic */}
+      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+        <GetWMatic balance={balance?.formatted}/>
       </div>
     </main>
   )

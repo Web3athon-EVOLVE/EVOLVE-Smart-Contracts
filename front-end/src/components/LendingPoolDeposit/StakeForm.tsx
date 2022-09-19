@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Form, ButtonGroup, Button, InputGroup } from 'react-bootstrap';
+import { useContract, useSigner } from 'wagmi'
+import { mumbaiContractAddress } from "../../../../smart-contracts/utils/contractAddress";
+import abiJSON from "../../../../smart-contracts/artifacts/contracts/CommunityPool.sol/CommunityPool.json";
 
 export default function StakeForm(wMatic) {
     const [mounted, setMounted] = useState(false);
@@ -7,8 +10,15 @@ export default function StakeForm(wMatic) {
     const [validAmount, setValidAmount] = useState(false);
     const [formType, setForm] = useState('stake');
     const title = (formType === 'stake') ? "Stake" : (formType === 'unstake') ? "Unstake" : undefined;
-
     useEffect(() => setMounted(true), []);
+
+    // Mumabi Contract Setup
+    const signer = useSigner();
+    const contractOnMumbai = useContract({
+        addressOrName: mumbaiContractAddress,
+        contractInterface: abiJSON.abi,
+        signerOrProvider: signer.data,
+    });
 
     function setAmount (perc) {
         const amount = Math.floor(Number(wMatic.balance) * perc) / 100;
@@ -57,7 +67,7 @@ export default function StakeForm(wMatic) {
     if (!mounted) return null
     return (
         <div>
-        <p>Contribute To The Pool By Staking Your $EVOLVE Tokens</p>
+        <p>Contribute To The Pool By Staking Your EVOLVE Tokens</p>
         <Form className="p-4">
             {/* Input Stake Amount */}
             <Form.Group className = 'pt-2 text-sm uppercase' controlId="stakeAmount">
@@ -71,7 +81,7 @@ export default function StakeForm(wMatic) {
                         value={amount}
                         title="balance not staked"
                     />
-                    <InputGroup.Text> $EVOLVE TOKENS </InputGroup.Text>
+                    <InputGroup.Text> EVOLVE TOKENS </InputGroup.Text>
                 </InputGroup>
             </Form.Group>
             {/* DEPOSIT AMOUNT */}
@@ -84,7 +94,7 @@ export default function StakeForm(wMatic) {
             {/* Submit Transaction */}
             <Button
                 onClick={()=>submitForm()} 
-                className="w-20 m-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">{title}
+                className="w-40 m-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded">{title}
             </Button>
         </Form>
     </div>);

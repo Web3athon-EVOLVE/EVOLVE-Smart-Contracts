@@ -17,6 +17,7 @@ import { useState, useEffect } from 'react'
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
+
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
       <HeadGlobal />
