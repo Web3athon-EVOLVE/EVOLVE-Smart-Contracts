@@ -23,7 +23,7 @@ export default function StakeForm(wMatic) {
     const [message, setMessage] = useState(null);
     const [loading, setLoading] = useState(null);
     // constants
-    const title = (formType === 'stake') ? "Stake" : (formType === 'unstake') ? "Unstake" : undefined;
+    const title = (formType === 'stake') ? "Approve & Deposit" : (formType === 'unstake') ? "Undeposit & Retrieve Rewards" : undefined;
     const WMATIC_TOKEN = tokenAddresses["Polygon Mumbai"]["ERC20"]["wMATIC"];
 
     useEffect(() => setMounted(true), []);
@@ -106,7 +106,7 @@ export default function StakeForm(wMatic) {
                 setSuccess(true);
                 setLoading(false);
                 setForm('unstake');
-                setMessage("Congratulations! Your funds were successfully deposited, you're on your way to financial freedom!");
+                setMessage("Congratulations, your funds were successfully deposited! You are now earning 5% APY.");
             }
             else {
                 console.log("Error getting contract.");
