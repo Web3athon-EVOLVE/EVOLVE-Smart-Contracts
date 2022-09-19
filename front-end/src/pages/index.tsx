@@ -65,7 +65,7 @@ function Main() {
         </p>
       </div>
       {/* Evolution Pool Info */}
-      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+      <div className="w-full max-w-xl rounded-xl bg-violet-500/10 p-6 text-center">
         <p>Evolution Pool Earnings</p>
           <dl className={styles.dl}>
             <dt>Balance (Aave Matic Market WMATIC)</dt>
@@ -77,7 +77,7 @@ function Main() {
           </dl>
       </div>
       {/* Staking App */}
-      <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
+      <div className="w-full max-w-xl rounded-xl bg-violet-500/10 p-6 text-center">
         <StakeForm balance={balanceWMATIC?.formatted}/>
       </div>
       {/* WALLET INFO COMPONENT */}
