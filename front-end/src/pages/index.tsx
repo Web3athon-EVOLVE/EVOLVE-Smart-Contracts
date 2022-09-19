@@ -120,7 +120,7 @@ function Main() {
       </div>
       {/* Staking App */}
       <div className="w-full max-w-xl rounded-xl bg-sky-500/10 p-6 text-center">
-        <StakeForm/>
+        <StakeForm balance={balanceWMATIC?.formatted}/>
       </div>
     </main>
   )
