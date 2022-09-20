@@ -85,8 +85,8 @@ yarn lint
 ---
 
 #### CREDITS & Shoutouts (Thank you for awesome code!):
-* [Front-End Staking](https://github.com/cpascoli/lp-token-staking)
-* [Front-End Boiler Plate](https://github.com/arisac/dapp-starter)
-* [Front-End Smart Contract Interaction using WAGMI](https://github.com/womenbuildweb3/Web3RSVP-frontend)
-* [Barber-to-Customer Escrow](https://github.com/Okiki-Olugunna/Barber-to-Customer-Escrow)
-* [ERC20 Token Staking](https://github.com/0xBonanza/Solidity-erc20-staking)
+* [Front-End Staking Layout Inspo](https://github.com/cpascoli/lp-token-staking)
+* [Front-End DApp BoilerPlate](https://github.com/arisac/dapp-starter)
+* [Front-End Smart Contract Interaction using WAGMI + Handling Transaction States](https://github.com/womenbuildweb3/Web3RSVP-frontend)
+* [Barber-to-Customer Escrow - AAVE + Polygon](https://github.com/Okiki-Olugunna/Barber-to-Customer-Escrow)
+* [ERC20 Token Staking - ERC20 Example Staking](https://github.com/0xBonanza/Solidity-erc20-staking)
