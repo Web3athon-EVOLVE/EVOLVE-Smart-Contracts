@@ -1,4 +1,11 @@
 # ✨ Welcome to EVOLVE's Evolution Pool DApp✨
+---
+
+[🚀 NAVIGATE TO ./front-end README](https://github.com/Web3athon-EVOLVE/Evolution-Pool-DApp/tree/master/front-end)
+
+[🚀 NAVIGATE TO ./smart-contracts README](https://github.com/Web3athon-EVOLVE/Evolution-Pool-DApp/tree/master/smart-contracts)
+
+---
 
 ![Figure 1](./images/EvolutionPoolFrontEnd.png)
 
@@ -12,7 +19,7 @@ This repository contains the code for the <b>Evolution Pool</b> which is a compo
 
 ---
 
-# 🌈 [Check Out The Live Demo](evolution-pool-dapp.vercel.app)
+# 🌈 [Check Out The Live Demo](https://evolution-pool-dapp-9pg78804r-evolve-dapp.vercel.app/)
 
 ### Demo Instructions: 
 * Step One: 
@@ -84,9 +91,9 @@ yarn lint
 * Navigate to front-end/README.md for more information on commands to run for running your front-end
 ---
 
-#### CREDITS & Shoutouts (Thank you for awesome code!):
+#### 💟 CREDITS & SHOUTOUTS (Thank you For Awesome code!):
 * [Front-End Staking Layout Inspo](https://github.com/cpascoli/lp-token-staking)
 * [Front-End DApp BoilerPlate](https://github.com/arisac/dapp-starter)
 * [Front-End Smart Contract Interaction using WAGMI + Handling Transaction States](https://github.com/womenbuildweb3/Web3RSVP-frontend)
 * [Barber-to-Customer Escrow - AAVE + Polygon](https://github.com/Okiki-Olugunna/Barber-to-Customer-Escrow)
-* [ERC20 Token Staking - ERC20 Example Staking](https://github.com/0xBonanza/Solidity-erc20-staking)
+* [ERC20 Token Staking - ERC20 Staking / AAVE Lending Pool](https://github.com/0xBonanza/Solidity-erc20-staking)
