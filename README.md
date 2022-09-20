@@ -84,7 +84,7 @@ yarn lint
 * Navigate to front-end/README.md for more information on commands to run for running your front-end
 ---
 
-#### CREDITS (Thank you for awesome code that I was able to learn from!):
+#### CREDITS & Shoutouts (Thank you for awesome code!):
 * [Front-End Staking](https://github.com/cpascoli/lp-token-staking)
 * [Front-End Boiler Plate](https://github.com/arisac/dapp-starter)
 * [Front-End](https://github.com/womenbuildweb3/Web3RSVP-frontend)
