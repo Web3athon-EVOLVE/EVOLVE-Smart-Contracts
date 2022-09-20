@@ -4,9 +4,9 @@ import { useContract, useSigner } from 'wagmi'
 import { ethers } from "ethers";
 import Alert from "../Utils/Alert";
 
-import { tokenAddresses } from "../../../../smart-contracts/utils/tokenAddresses";
+import { tokenAddresses } from "../../../imported/tokenAddresses";
 
-import IWMatic_JSON from "../../../../smart-contracts/artifacts/contracts/interfaces/IWMatic.sol/IWMatic.json";
+import IWMatic_JSON from "../../../imported/contracts/interfaces/IWMatic.sol/IWMatic.json";
 
 export default function GetWMatic(matic) {
     // component states

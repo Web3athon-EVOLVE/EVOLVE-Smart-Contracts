@@ -6,11 +6,11 @@ import Alert from "../Utils/Alert";
 import { useContract, useSigner } from 'wagmi'
 import { ethers } from "ethers";
 
-import { mumbaiContractAddress } from "../../../../smart-contracts/utils/contractAddress";
-import { tokenAddresses } from "../../../../smart-contracts/utils/tokenAddresses";
+import { mumbaiContractAddress } from "../../../imported/contractAddress";
+import { tokenAddresses } from "../../../imported/tokenAddresses";
 
-import abiJSON from "../../../../smart-contracts/artifacts/contracts/CommunityPool.sol/CommunityPool.json";
-import IERC_JSON from "../../../../smart-contracts/artifacts/contracts/interfaces/IERC20.sol/IERC20.json";
+import abiJSON from "../../../imported/contracts/CommunityPool.sol/CommunityPool.json";
+import IERC_JSON from "../../../imported/contracts/interfaces/IERC20.sol/IERC20.json";
 
 export default function StakeForm(wMatic) {
     // component states
