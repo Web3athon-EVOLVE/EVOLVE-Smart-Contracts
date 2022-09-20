@@ -14,7 +14,7 @@ This repository contains the code for the <b>Evolution Pool</b> which is a compo
 
 # 🌈 [Check Out The Live Demo](evolution-pool-dapp.vercel.app)
 
-### Make Sure You Fund Your Account(s) with MATIC & That You're Connected To The Polygon Mumbai Network:
+### Make Sure You Fund Your Account(s) with MATIC & Connected To The Polygon Mumbai Test Network:
 * [Polygon Faucet (Mumbai Network)](https://faucet.polygon.technology/)
 
 ---
