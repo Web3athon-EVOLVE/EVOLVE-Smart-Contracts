@@ -12,7 +12,14 @@ This repository contains the code for the <b>Evolution Pool</b> which is a compo
 
 ---
 
-# 🏄‍♂️ Quick Start
+# 🌈 [Check Out The Live Demo](evolution-pool-dapp.vercel.app)
+
+### Make Sure You Fund Your Account(s) with MATIC & That You're Connected To The Polygon Mumbai Network:
+* [Polygon Faucet (Mumbai Network)](https://faucet.polygon.technology/)
+
+---
+
+# 🏄‍♂️ Quick Start - For Developers
 ### Before you clone this project make sure you have the following installed on your machine (in this order)!
 
 * [Node.js](https://nodejs.org/en/) 
