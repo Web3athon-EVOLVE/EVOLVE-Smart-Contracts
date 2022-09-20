@@ -14,9 +14,15 @@ This repository contains the code for the <b>Evolution Pool</b> which is a compo
 
 # 🌈 [Check Out The Live Demo](evolution-pool-dapp.vercel.app)
 
-### Make Sure You Fund Your Account(s) with MATIC & Connected To The Polygon Mumbai Test Network:
-* [Polygon Faucet (Mumbai Network)](https://faucet.polygon.technology/)
-
+### Demo Instructions: 
+* Step One: 
+  * Make sure your account is funded with MATIC
+    * [Get Test Matic from The Polygon Faucet (Mumbai Network)](https://faucet.polygon.technology/) 
+  * Make sure your wallet is connected to the Polygon Mumbai Test Network
+* Step Two:
+  * Exchange Your MATIC for wMATIC on the DApp
+* Step Three:
+  *  Deposit your wMATIC into the Evolution Pool to start earning interest! In this demo you earn amwMATIC. 
 ---
 
 # 🏄‍♂️ Quick Start - For Developers
