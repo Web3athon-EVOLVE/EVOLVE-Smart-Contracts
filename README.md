@@ -1,4 +1,11 @@
 # ✨ Welcome to EVOLVE's Evolution Pool DApp✨
+---
+
+[🚀 NAVIGATE TO ./front-end README](https://github.com/Web3athon-EVOLVE/Evolution-Pool-DApp/tree/master/front-end)
+
+[🚀 NAVIGATE TO ./smart-contracts README](https://github.com/Web3athon-EVOLVE/Evolution-Pool-DApp/tree/master/smart-contracts)
+
+---
 
 ![Figure 1](./images/EvolutionPoolFrontEnd.png)
 
