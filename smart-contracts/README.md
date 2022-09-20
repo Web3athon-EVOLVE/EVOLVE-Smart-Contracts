@@ -14,6 +14,21 @@ yarn script
 # run test scrript with multiple participants depositing wMatic
 yarn script-multi
 ```
+# File Breakdown
+## Contracts Folder
+### Main Contracts
+#### ./Token.sol
+#### ./CommunityPool.sol
+## Libraries
+#### ./libraries/DataTypes.sol
+## Interfaces - Open Zepplin ERC-20 Standard
+#### ./interfaces/IERC20.sol
+#### ./interfaces/IWMatic.sol
+#### .interfaces/IEIP20.sol
+## Interfaces - AAVE's V2 Lending and Borrowing Protocol
+#### ./interfaces/ILendingPool.sol
+#### ./interfaces/ILendingPoolAddressesProvider.sol
+
 
 ## Scripts Folder
 #### ./testPool.ts
