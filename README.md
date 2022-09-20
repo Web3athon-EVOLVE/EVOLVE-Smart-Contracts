@@ -29,7 +29,6 @@ git --version
 ---
 ### Let's Get Building!
 * First, fork this project by clicking the fork button in the upper right hand corner of the repo page.
-![Figure 2](./images/fork.png)
 * Second, open your terminal and run the following command with the correct inputs.
 
 ```bash
