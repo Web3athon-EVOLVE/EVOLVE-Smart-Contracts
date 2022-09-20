@@ -1,6 +1,12 @@
 # Evolution Pool Front-End
 
-Front-End DApp to interact with our smart contracts using Next.js + Tailwind CSS + Ethers + wagmi + RainbowKit.
+Front-end DApp to interact with our smart contracts using:
+
+* Next.js
+* Tailwind CSS
+* Ethers
+* wagmi React Hooks
+* RainbowKit
 
 Other tools used: Headless UI, Heroicons, Autoprefixer, Sass, PostCSS, ESLint, Prettier.
 
