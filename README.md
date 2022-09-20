@@ -52,7 +52,7 @@ yarn install
 cd /front-end
 yarn install
 ```
-* Ready! 💘
+* Ready to Run The Front-End & Interact with The EVOLUTION POOL SMART CONTRACTS:! 💘
 ```bash
 cd /front-end
 yarn dev
