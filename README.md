@@ -89,4 +89,4 @@ yarn lint
 * [Front-End DApp BoilerPlate](https://github.com/arisac/dapp-starter)
 * [Front-End Smart Contract Interaction using WAGMI + Handling Transaction States](https://github.com/womenbuildweb3/Web3RSVP-frontend)
 * [Barber-to-Customer Escrow - AAVE + Polygon](https://github.com/Okiki-Olugunna/Barber-to-Customer-Escrow)
-* [ERC20 Token Staking - ERC20 Staking](https://github.com/0xBonanza/Solidity-erc20-staking)
+* [ERC20 Token Staking - ERC20 Staking / AAVE Lending Pool](https://github.com/0xBonanza/Solidity-erc20-staking)
