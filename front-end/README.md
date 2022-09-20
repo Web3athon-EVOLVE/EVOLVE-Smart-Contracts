@@ -26,6 +26,8 @@ yarn dev
 # Copy ENV File
 cp .env.example .env.local
 ```
+### Imported/ Folder
+- Contains the ABIs + Contract Addresses for Deployed Smart Contracts & Tokens
 
 ### Configs
 
